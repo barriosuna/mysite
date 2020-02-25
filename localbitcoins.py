@@ -3,6 +3,7 @@ import pandas as pd
 
 def local_arg(precio_btc, precio_eth):
 	#probando again
+	#cambio??
 	precios_arg = requests.get("https://localbitcoins.com/buy-bitcoins-online/ars/national-bank-transfer/.json").json()
 	precios_arg = precios_arg['data']['ad_list']
 	precios_ves = requests.get("https://localbitcoins.com/sell-bitcoins-online/ves/transfers-with-specific-bank/.json").json()
