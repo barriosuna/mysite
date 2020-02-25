@@ -4,7 +4,7 @@ import json
 
 def prices():
 	#import pandas as pd
-	#funciona?
+	#Sera asi de facil?
 	url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
 	parameters = {
 	  'start':'1',
