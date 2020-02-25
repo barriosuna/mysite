@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+ <div>
+
+    <a href="/index" >Home</a>
+    <a>BTC: {{ precio_bitcoin }} ETH: {{ precio_eth }}</a>
+        </div>
+
+
+    <h2 align="center">Precios y dolar implicito</h2>
+    <div class=table_a align="center">
+
+	<hr>
+	<p>Cryptomkt OB BTC/ARS</p>
+
+	{% for table in tabla2 %}
+            {{ table|safe }}
+	{% endfor %}
+	<hr>
+	<p>Cryptomkt OB ETH/ARS</p>
+
+	{% for table in tabla3 %}
+            {{ table|safe }}
+	{% endfor %}
+
+    <button id="btn" align="center" margin-top="10px">Mostrar LocalBitcoins</button>
+<hr>
+        <div id="response" align="center"></div>
+
+
+	</div>
+
+
+        <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+      $('button#btn').click(function(){
+        $.ajax({
+            url: "/_get_data/",
+            type: "POST",
+            success: function(resp){
+                $('div#response').append(resp.data);
+            }
+        });
+      });
+  </script>
+
+
+
+{% endblock %}
+

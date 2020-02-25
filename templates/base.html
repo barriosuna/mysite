@@ -1,0 +1,28 @@
+<html>
+    <head>
+         <!--<link type= "text/css" href= "{{ url_for('static',filename='stylesheets/facha.css') }}"> --->
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='facha.css') }}">
+
+        {% if title %}
+        <title>{{ title }} - Visor de Dolar</title>
+        {% else %}
+        <title>Visor de Dolar</title>
+        {% endif %}
+    </head>
+    <body>
+
+
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>
+
