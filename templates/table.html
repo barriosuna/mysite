@@ -18,18 +18,17 @@ Visor de dolar
 
 
     <h2 align="center">Precios y dolar implicito</h2>
-    <div class=table_a align="center">
+    <button id="btn" align="left" margin-top="40px" margin-bottom="60px">Mostrar LocalBitcoins</button>
 
-	<hr>
+    <div class="container">
+   <div class="row">
+            <div class="col-md-12">
 
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-6">
-
-<div class="table-title">
-    <p>Cryptomkt OB BTC/ARS</p>
+                    
+                <div class="row">
+                    <div class="col-md-3"> 
+                      <div class="table-title">
+    <p >Cryptomkt OB BTC/ARS</p>
 
 </div>
 
@@ -55,12 +54,16 @@ Visor de dolar
 
 </tbody>
 </table>
-</div>
+
+                    </div>
+                    <div class="col-md-3">
+ 
+
+                    </div>
 
 
-
- <div class="col-6">
-  <div class="table-title">
+                    <div class="col-md-3">  
+                      <div class="table-title" >
     <p>Cryptomkt OB ETH/ARS</p>
 
 </div>
@@ -87,9 +90,27 @@ Visor de dolar
 
 </tbody>
 </table>
+
+                    </div>
+                    <div class="col-md-3">
+ 
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
 </div>
-</div>
-</div>
+
 <!--
 	{% for table in tabla2 %}
             {{ table|safe }}
@@ -100,13 +121,11 @@ Visor de dolar
 	{% for table in tabla3 %}
             {{ table|safe }}
 	{% endfor %}
--->
-    <button id="btn" align="center" margin-top="10px">Mostrar LocalBitcoins</button>
-<hr>
+--><hr>
+
         <div id="response" align="center"></div>
 
 
-	</div>
 
 
         <script

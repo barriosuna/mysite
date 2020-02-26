@@ -38,7 +38,8 @@ def local_arg(precio_btc, precio_eth):
 	ves_avg = info1.Precio.mean()
 	tasa = (ves_avg/arg_avg)*0.99
 	tasa =round(tasa,1)
-
+	info=info.values.tolist()
+	info1=info1.values.tolist()
 	return info,info1,tasa
 
 #print(precios_arg.keys())

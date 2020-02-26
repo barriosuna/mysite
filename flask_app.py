@@ -24,11 +24,10 @@ def index():
         #flash('Login requested for user {}, remember_me={}'.format(
             #form.username.data, form.remember_me.data))
         bitcoin, ethereum, precio_bitcoin,precio_ethereum = precios(form.username.data,form.password.data)
-        argentina,venezuela,tasa = local_arg(precio_bitcoin,precio_ethereum)
 
         #return render_template('table.html', tabla=[result.to_html(classes='data')], titles=result.columns.values, user=user)
         #return render_template('table.html', tabla1=[argentina.to_html()], tabla2=[bitcoin.to_html()], tabla3=[ethereum.to_html()], tasa =tasa, precio_bitcoin = precio_bitcoin, precio_eth = precio_ethereum)
-        return render_template('table.html', tabla1=[argentina.to_html()], tabla2=bitcoin, tabla3=ethereum, tasa =tasa, precio_bitcoin = precio_bitcoin, precio_eth = precio_ethereum)
+        return render_template('table.html', tabla2=bitcoin, tabla3=ethereum, precio_bitcoin = precio_bitcoin, precio_eth = precio_ethereum)
 
     return render_template('index.html', form=form)
 
@@ -41,7 +40,7 @@ def _get_data():
     btc,eth=prices()
     argentina,venezuela,tasa = local_arg(btc,eth)
 
-    return jsonify({'data': render_template('response.html', tabla1=[argentina.to_html()], tasa=tasa)})
+    return jsonify({'data': render_template('response.html', tabla1=argentina, tasa=tasa)})
 
 
 

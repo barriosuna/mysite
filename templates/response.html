@@ -1,8 +1,30 @@
     <h3 align = "center"> La tasa LB sin comisiones ARS/VES es {{ tasa }}</h3>
    <p>Compra LocalBitcoins</p>
 
-
+<!--
 {% for table in tabla1 %}
             {{ table|safe }}
 	{% endfor %}
+-->
+<table class="table-fill">
+<thead>
+    <tr text-align="right">
+      <th>Monto BTC en USD</th>
+      <th>Precio</th>
+      <th>Dolar</th>
+    </tr>
+    </thead>
 
+<tbody class="table-hover">
+
+   {% for a,b,c in tabla1 %}
+                   <tr>
+<td class="text-left">{{ a }} </td>
+<td class="text-left">{{ b }} </td>
+<td class="text-left">{{ c }} </td>
+
+                   </tr>
+      {% endfor %}
+
+</tbody>
+</table>
