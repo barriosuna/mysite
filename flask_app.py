@@ -6,11 +6,13 @@ from config import Config
 from flask_bootstrap import Bootstrap
 from coinmarketcap import prices
 
+
 app = Flask(__name__)
 app.config.from_object(Config)
 app.static_folder = 'static'
 
 bootstrap = Bootstrap(app)
+
 
 
 @app.route('/',methods=['GET', 'POST'])

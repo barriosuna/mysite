@@ -1,19 +1,47 @@
-{% extends "base.html" %}
+{% extends "bootstrap/base.html" %} 
 {% import 'bootstrap/wtf.html' as wtf %}
 
-{% block content %}
-    <h1 align="center">Visor</h1>
-    <form action="" method="post" novalidate align="center">
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.username.label }}<br>
-            {{ form.username(size=32) }}
-        </p>
-        <p>
-            {{ form.password.label }}<br>
-            {{ form.password(size=32) }}
-        </p>
-        <p>{{ form.submit() }}</p>
+{% block styles %}
+{{ super() }}
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='linda.css') }}">
 
-    </form>
+{% endblock %}
+
+{% block content %}
+   
+
+<div class ="papota">
+        <div id="login" align="center">
+
+  <div class="container" align="center">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login-form" class="form" action="" method="post" novalidate align="center">
+                                    {{ form.hidden_tag() }}
+
+                            <h3 class="text-center text-info">Visor</h3>
+                            <div class="form-group">
+                                <label for="username" class="text-info">  {{ form.username.label }}</label><br>
+                                <input type="text" name="username" id="username" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="text-info">  {{ form.password.label }} </label><br>
+                                <input type="text" name="password" id="password" class="form-control">
+
+                            </div>
+                            <div class="form-group">
+                                <br>
+                                
+                                {{ wtf.form_field(form.submit, class="btn btn-info btn-md") }}
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+
+
 {% endblock %}
