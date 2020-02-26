@@ -13,6 +13,7 @@ align =right;
 table {
   width: 75%;
   background-color: #fff;
+  text-align: center;
 }
 
 th, td {

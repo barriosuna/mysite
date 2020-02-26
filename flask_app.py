@@ -27,7 +27,8 @@ def index():
         argentina,venezuela,tasa = local_arg(precio_bitcoin,precio_ethereum)
 
         #return render_template('table.html', tabla=[result.to_html(classes='data')], titles=result.columns.values, user=user)
-        return render_template('table.html', tabla1=[argentina.to_html()], tabla2=[bitcoin.to_html()], tabla3=[ethereum.to_html()], tasa =tasa, precio_bitcoin = precio_bitcoin, precio_eth = precio_ethereum)
+        #return render_template('table.html', tabla1=[argentina.to_html()], tabla2=[bitcoin.to_html()], tabla3=[ethereum.to_html()], tasa =tasa, precio_bitcoin = precio_bitcoin, precio_eth = precio_ethereum)
+        return render_template('table.html', tabla1=[argentina.to_html()], tabla2=bitcoin, tabla3=ethereum, tasa =tasa, precio_bitcoin = precio_bitcoin, precio_eth = precio_ethereum)
 
     return render_template('index.html', form=form)
 

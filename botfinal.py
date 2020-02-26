@@ -40,6 +40,12 @@ def precios(dolar_referencia,taker_fee):
         price_eth = round(price_eth)
         btc.columns = ['Monto BTC en USD', 'Precio','Dolar']
         eth.columns = ['Monto ETH en USD', 'Precio','Dolar']
-
+        btc=btc.values.tolist()
+        eth=eth.values.tolist()
         return btc, eth, price_btc, price_eth
 
+#btc,eth,price_btc,price_eth = precios(80,0.0058)
+
+#bitcoin=btc.values.tolist()
+
+#print(bitcoin)
